@@ -90,8 +90,9 @@ namespace ConnectFour
                 }
             }
             Console.WriteLine("we found the horizontal start at " + horzStart + " " + foundHorzStart);
-            for (int i = horzStart; i < board.GetLength(1); i++)
+            for (int i = horzStart; i < board.GetLength(1) - 1; i++)
             {
+                if (horzStart > board.GetLength(1) - 4) break; //  not enough space for connect 4
                 if (board[lastToken.Item1, lastToken.Item2] == board[lastToken.Item1, horzStart + 1])
                 {
                     sequenceCount += 1;
